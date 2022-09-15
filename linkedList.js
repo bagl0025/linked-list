@@ -30,7 +30,7 @@ class LinkedList {
     let current;
 
     if (!this.head) {
-      thise.head = node;
+      this.head = node;
     } else {
       current = this.head;
 
@@ -44,12 +44,12 @@ class LinkedList {
 }
 
 const l = new LinkedList();
-l.insertFirst(4);
 l.insertFirst(3);
 l.insertFirst(2);
 l.insertFirst(1);
-l.insertLast(5);
+// l.insertLast(3);
 l.printListData();
+console.log("l", l);
 
 function solution(l, k) {
   var current = l;
@@ -61,16 +61,15 @@ function solution(l, k) {
 }
 
 function reverse(l) {
-  var current = l;
-  var next = (prev = null);
-  while (current) {
+  let current = l;
+  let next = null;
+  let prev = null;
+  while (current != null) {
     next = current.next; //save next
     current.next = prev; //reverse
     prev = current; // advance prev
     current = next; //advance current
   }
-  console.log(prev);
-  return prev;
+  var bcb = prev;
+  return bcb;
 }
-
-// reverse(l);
