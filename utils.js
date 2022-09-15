@@ -1,3 +1,5 @@
+const rev = require("./reverseKnodes");
+
 // User defined class node
 class ListNode {
   constructor(value, next = null) {
@@ -44,32 +46,11 @@ class LinkedList {
 }
 
 const l = new LinkedList();
+l.insertFirst(5);
+l.insertFirst(4);
 l.insertFirst(3);
 l.insertFirst(2);
 l.insertFirst(1);
-// l.insertLast(3);
 l.printListData();
-console.log("l", l);
 
-function solution(l, k) {
-  var current = l;
-  var ahead = l;
-  if (k <= 1) {
-    //only one item in list or empty
-    return current;
-  }
-}
-
-function reverse(l) {
-  let current = l;
-  let next = null;
-  let prev = null;
-  while (current != null) {
-    next = current.next; //save next
-    current.next = prev; //reverse
-    prev = current; // advance prev
-    current = next; //advance current
-  }
-  var bcb = prev;
-  return bcb;
-}
+rev.solution(l, 2).printListData();
